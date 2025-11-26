@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const STORYBOOK_URL = "aurora-design-system-main.vercel.app";
+const STORYBOOK_URL = "https://aurora-design-system-main.vercel.app";
 
 function App() {
   const [copiedNpm, setCopiedNpm] = useState(false);
