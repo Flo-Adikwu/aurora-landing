@@ -1,4 +1,11 @@
 import { useState } from "react";
+import AccessibleForwardOutlinedIcon from '@mui/icons-material/AccessibleForwardOutlined';
+import BoltOutlinedIcon from '@mui/icons-material/BoltOutlined';
+import PaletteOutlinedIcon from '@mui/icons-material/PaletteOutlined';
+import PhoneAndroidOutlinedIcon from '@mui/icons-material/PhoneAndroidOutlined';
+import ScienceOutlinedIcon from '@mui/icons-material/ScienceOutlined';
+import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const STORYBOOK_URL = "https://aurora-design-system-main.vercel.app";
 
@@ -26,32 +33,32 @@ function App() {
 
   const features = [
     {
-      icon: "⚡",
+      icon: <BoltOutlinedIcon/>,
       title: "Lightning Fast",
       description: "Optimized performance with minimal bundle size",
     },
     {
-      icon: "♿",
+      icon: <AccessibleForwardOutlinedIcon/>,
       title: "Accessible",
       description: "WCAG 2.1 AA compliant with full ARIA support",
     },
     {
-      icon: "🎨",
+      icon: <PaletteOutlinedIcon/>,
       title: "Customizable",
       description: "Multiple variants and full Tailwind integration",
     },
     {
-      icon: "📱",
+      icon: <PhoneAndroidOutlinedIcon/>,
       title: "Responsive",
       description: "Mobile-first design that works everywhere",
     },
     {
-      icon: "🧪",
+      icon: <ScienceOutlinedIcon/>,
       title: "Well Tested",
       description: "200+ tests with comprehensive coverage",
     },
     {
-      icon: "📖",
+      icon: <AutoStoriesOutlinedIcon/>,
       title: "Documented",
       description: "Interactive Storybook with live examples",
     },
@@ -117,7 +124,7 @@ function App() {
         </div>
 
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-aurora-50 border border-aurora-200 rounded-full text-aurora-700 text-sm font-medium mb-8 animate-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-300 rounded-full text-purple-700 text-sm font-medium mb-8 animate-glow">
             <span className="animate-pulse">✨</span>
             10 Production-Ready Components
           </div>
@@ -150,11 +157,12 @@ function App() {
               href="https://github.com/Flo-Adikwu/aurora-design-system"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-semibold text-lg hover:border-gray-300 transition-all hover:scale-105"
+              className="px-8 py-4 bg-white border-2 border-purple-300 text-gray-900 rounded-xl font-semibold text-lg hover:border-purple-300 transition-all hover:scale-105"
             >
               View on GitHub
             </a>
           </div>
+
 
           {/* NPM Install */}
           <div className="max-w-2xl mx-auto">
@@ -167,7 +175,7 @@ function App() {
                 onClick={handleCopyNpm}
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                {copiedNpm ? "✓" : "📋"}
+                {copiedNpm ? "✓" : <ContentCopyOutlinedIcon/>}
               </button>
             </div>
           </div>
@@ -193,13 +201,10 @@ function App() {
             {components.map((component, index) => (
               <div
                 key={component.name}
-                className="group p-6 bg-white rounded-2xl border border-gray-200 hover:border-aurora-500 hover:shadow-lg transition-all cursor-pointer"
+                className="group p-6 bg-white rounded-2xl border border-purple-300 hover:shadow-lg transition-all cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                  {component.icon}
-                </div>
-                <div className="font-semibold text-gray-900 group-hover:text-aurora-600 transition-colors">
+                <div className="font-semibold text-gray-900 transition-colors">
                   {component.name}
                 </div>
               </div>
@@ -211,7 +216,7 @@ function App() {
               href={STORYBOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-aurora-600 hover:text-aurora-700 font-semibold text-lg"
+              className="inline-flex items-center gap-2 text-purple-600 hover:text-purple-700 font-semibold text-lg"
             >
               Explore All Components
               <span>→</span>
@@ -236,9 +241,11 @@ function App() {
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className="p-8 bg-white rounded-2xl border border-gray-200 hover:border-aurora-500 hover:shadow-xl transition-all"
+                className="p-8 bg-white rounded-2xl border border-purple-300 hover:shadow-xl transition-all"
               >
-                <div className="text-5xl mb-4">{feature.icon}</div>
+                <div className="text-5xl bg-purple-200 p-1 rounded-2xl border border-purple-300 mb-4 inline-flex">
+                {feature.icon}
+                </div>
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
                   {feature.title}
                 </h3>
@@ -248,6 +255,7 @@ function App() {
           </div>
         </div>
       </section>
+      
 
       {/* Code Example */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -308,7 +316,7 @@ function App() {
               href="https://github.com/Flo-Adikwu/aurora-design-system"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-xl font-semibold text-lg hover:border-gray-300 transition-all hover:scale-105"
+              className="px-8 py-4 bg-white border-2 border-purple-300 text-gray-900 rounded-xl font-semibold text-lg hover:border-purple-300 transition-all hover:scale-105"
             >
               Star on GitHub
             </a>
@@ -330,7 +338,7 @@ function App() {
                   href="https://linkedin.com/in/florenceadikwu1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-aurora-600 hover:text-aurora-700 font-semibold"
+                  className="text-purple-600 hover:text-purple-700 font-semibold"
                 >
                   Florence Adikwu
                 </a>
